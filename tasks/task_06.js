@@ -6,7 +6,17 @@
 Note: оценки всегда будут уникальными (поэтому никаких повторяющихся значений) */
 
 function myLanguages(results) {
+  const passed = [];
 
+    for (const [language, score] of Object.entries(results)) {
+        if (score >= 60) {
+            passed.push(language);
+        }
+    }
+
+    passed.sort((a, b) => results[b] - results[a]);
+
+    return passed;
 }
 
 

@@ -6,8 +6,30 @@
 //=>      [[1,'h'], [1,'e'], [2,'l'], [1,'o'], [1,' '], [1,'w'], [1,'o'], [1,'r'], [1,'l'], [1,'d'], [1,'!']]
 // runLengthEncoding("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbb")
 //  // => [[34,'a'], [3,'b']]
+
 function runLengthEncoding(str) {
-    return []
+    if (str.length === 0) {
+      return [];
+    }
+
+    const encoded = [];
+    let count = 1;
+    let current = str[0];
+
+    for (let i = 1; i < str.length; i++) { 
+      if (str[i] === current) {
+        count++;
+    } else {
+      encoded.push([count, current]);
+      current = str[i];
+      count = 1;
+    }
+  }
+
+  encoded.push([count, current]);
+
+  return encoded;
+
 }
 
 

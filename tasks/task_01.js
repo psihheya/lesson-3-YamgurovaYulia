@@ -11,12 +11,12 @@ function reverseString(str) {
   //
   // return result
   // 4
-  // const result = []
-  //
-  // for (const s of str)
-  //     result.unshift(s)
-  //
-  // return result.join('')
+   const result = []
+  
+   for (const s of str)
+       result.unshift(s)
+  
+   return result.join('')
 }
 
 console.log(reverseString("123"));

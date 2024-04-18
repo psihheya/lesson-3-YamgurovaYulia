@@ -12,7 +12,20 @@
 * */
 
 function fibonacci(num) {
+    let a = 0;
+    let b = 1;
+    let temp;
 
+    if (num === 0) return a;
+    if (num === 1) return b;
+
+    for (let i = 2; i <= num; i++) {
+        temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    return b;
 }
 
 
